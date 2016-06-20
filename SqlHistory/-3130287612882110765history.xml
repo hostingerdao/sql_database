@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select distinct bds.mabds, ch.soch, b.matin
+from batdongsan bds, bdsdangban b , bdsdangthue t, chungcu cc , canho ch, tindang td
+where (bds.mabds = b.mabds or b.mabds = b.mabds)
+      and bds.mabds not in (
+        select mabds
+        from GiaoDichThanhCong) 
+      and cc.ten = 'Lan Phuong' and cc.macc = ch.macc and ch.mabds = bds.mabds and (td.matin = b.matin or td.matin = t.matin);]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[14:12 20/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[4]]></executed>
+		<execTime><![CDATA[0.109]]></execTime>
+	</historyItem>
+</history>

@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[SELECT BD.MABDS
+FROM BDSCSHT BD, COSOHATANG CS,CanHo ch, NhaPho Np,BDSDANGBAN Ban, ChungCu CC , Phuong, Quan
+WHERE BD.KhoangCach <= 5 And BD.MACSHT = CS.MACSHT And 
+(CS.TENLOAICSHT = 'Cho' OR CS.TENLOAICSHT = 'Truong tieu hoc') and 
+((ch.MABDS = BD.MABDS and ch.MACC = CC.MACC And CC.MAPHUONG = Phuong.MAPHUONG And Quan.MAQUAN = 'Q10HCM')  
+or( Np.MABDS = BD.MABDS and Np.MAPHUONG = Phuong.MAPHUONG and Quan.MAQUAN = 'Q10HCM')) and
+BD.MABDS = Ban.MABDS ;]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[23:54 19/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.18]]></execTime>
+	</historyItem>
+</history>

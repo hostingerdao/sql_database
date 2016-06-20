@@ -1,0 +1,13 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select *
+  FROM DOANHSOTHANG
+  where MaNV = 9 and Nam ='2016'and Thang = '03';]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[10:44 07/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.0030]]></execTime>
+	</historyItem>
+</history>

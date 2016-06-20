@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[GRANT SELECT, INSERT, UPDATE, DELETE ON TINDANG TO DANGTIN;]]></sql>
+		<connection><![CDATA[XE-SYS]]></connection>
+		<timestamp><![CDATA[15:33 07/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.124]]></execTime>
+	</historyItem>
+</history>

@@ -1,0 +1,15 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into ChungCu values('CC0001','Chung cu Son Ky', '1990', '49', 'D0001', 'P0002', 10, 80, 8000000, 3, 6, 'Cong vien, Nha tre, Nha tap the hinh');
+insert into ChungCu values('CC0002','Chung cu Lu Gia', '2001', '112', 'D0002', 'P0004', 20, 400, 12000000, 12, 18, 'Truong hoc, Nha tre, Nha tap the hinh');
+insert into ChungCu values('CC0003','Chung cu Ly Thuong Kiet', '2012', '8', 'D0003', 'P0003', 5, 20, 7000000, 3, 6, 'Cong vien, Cho, Nha tap the hinh');
+insert into ChungCu values('CC0004','Chung cu Phu Tho', '2003', '128', 'D0004', 'P0002', 12, 30, 5000000, 8, 10, 'Cong vien, Nha tre');
+insert into ChungCu values('CC0005','Chung cu Phan Lam', '2013', '93', 'D0001', 'P0004', 10, 80, 3000000, 6, 16, 'Cong vien, Nha tre, Nha tap the hinh');]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[19:24 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.031]]></execTime>
+	</historyItem>
+</history>

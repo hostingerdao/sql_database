@@ -1,0 +1,12 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[SELECT SYS.CHINHANH.MACN , TENCN , SOFAX, SYS.CHINHANH.DIACHI , SYS.NHANVIEN.HOTEN 
+FROM SYS.CHINHANH LEFT OUTER JOIN SYS.NHANVIEN ON SYS.CHINHANH.MANVTRUONG = SYS.NHANVIEN.MANV;]]></sql>
+		<connection><![CDATA[xe-NhanSuAdmin-ass3]]></connection>
+		<timestamp><![CDATA[01:05 10/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[2]]></executed>
+		<execTime><![CDATA[0.076]]></execTime>
+	</historyItem>
+</history>

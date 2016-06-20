@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[SELECT sys.quan.maquan , sys.quan.tenquan   FROM SYS.quan, sys.thanhpho where sys.quan.matp = sys.thanhpho.matp and sys.thanhpho.matp = 'TP0001';]]></sql>
+		<connection><![CDATA[xe-NhanSuAdmin-ass3]]></connection>
+		<timestamp><![CDATA[22:20 08/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[2]]></executed>
+		<execTime><![CDATA[0.0010]]></execTime>
+	</historyItem>
+</history>

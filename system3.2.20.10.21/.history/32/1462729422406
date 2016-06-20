@@ -1,0 +1,29 @@
+SELECT sys.chinhanh.MACN, TENCN, SOFAX, sys.chinhanh.DIACHI, SYS.NHANVIEN.HOTEN as "Tr\u01B0\u1EDFng Chi Nh\u00E1nh"
+FROM SYS.CHINHANH, SYS.NHANVIEN
+WHERE SYS.CHINHANH.MANVTRUONG = SYS.NHANVIEN.MANV;
+
+SELECT COUNT(*) AS NUM
+FROM SYS.CHINHANH
+WHERE SYS.CHINHANH.TENCN = 'van mih';
+SELECT *  FROM SYS.thanhpho;
+
+SELECT SYS.QUAN.MAQUAN , SYS.QUAN.TENQUAN   FROM SYS.QUAN, SYS.THANHPHO WHERE SYS.QUAN.MATP = SYS.THANHPHO.MATP AND SYS.THANHPHO.MATP = 'TP0001';
+
+SAVEPOINT LOC;
+INSERT INTO sys.CHINHANH VALUES(7,'Van hau','0123456789','D0001','P0001', '', null);
+rollback to loc;
+
+update sys.chinhanh set diachi = (
+SELECT TENDUONG || ', ' ||TENPHUONG || ', ' ||TENQUAN || ', ' || TENTP
+FROM sys.DUONG D, sys.PHUONG P, sys.QUAN Q, sys.THANHPHO TP
+where chinhanh.maduong  =  d.maduong and p.maphuong = chinhanh.maphuong and p.maquan = q.maquan and q.matp = tp.matp);
+
+
+--TEST CHO PHAN THEM DU LIEU VAO TRONG TABLE DIACHI
+--SELECT * FROM SYS.CHINHANH;
+--DELETE FROM SYS.CHINHANH WHERE MACN = 7;
+--commit;
+
+
+
+

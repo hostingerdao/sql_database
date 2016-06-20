@@ -1,0 +1,5 @@
+select * from sys.batdongsan where mabds not in(
+select mabds from sys.giaodichthanhcong) order by mabds;
+
+select count(*) from sys.BDSDANGBAN where mabds = 'CH000001';
+select count(*) from sys.BDSDANGTHUE where mabds = 'CH000001';

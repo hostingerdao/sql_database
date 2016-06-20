@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select count(*) from sys.BDSDANGBAN where mabds = 'CH000001';]]></sql>
+		<connection><![CDATA[xe-KinhDoanhA-ass3]]></connection>
+		<timestamp><![CDATA[01:25 11/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.117]]></execTime>
+	</historyItem>
+</history>

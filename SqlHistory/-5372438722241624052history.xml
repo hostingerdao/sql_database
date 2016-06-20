@@ -1,0 +1,21 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[update doitac set MaNV = (select manv
+            from nhanvien
+            where hoten = 'Le Thi B')
+where madt in (
+        select madt 
+        from doitac where manv in (
+          select manv
+          from nhanvien
+          where hoten = 'Nguyen Van A'
+        )
+);]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[23:41 19/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.093]]></execTime>
+	</historyItem>
+</history>

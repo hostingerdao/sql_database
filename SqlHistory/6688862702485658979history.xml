@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select * from sys.batdongsan;]]></sql>
+		<connection><![CDATA[XE-DangTin-ass3]]></connection>
+		<timestamp><![CDATA[13:35 11/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[1.104]]></execTime>
+	</historyItem>
+</history>

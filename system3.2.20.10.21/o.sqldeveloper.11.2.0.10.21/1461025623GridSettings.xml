@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableSettings class="oracle.dbtools.raptor.controls.grid.RaptorGridPersistedSettings" xmlns="http://xmlns.oracle.com/jdeveloper/110000/Table-attributes">
+   <columnPositions class="java.util.ArrayList">
+      <Item class="java.lang.String">MABDS</Item>
+      <Item class="java.lang.String">MATIN</Item>
+      <Item class="java.lang.String">GIABAN</Item>
+      <Item class="java.lang.String">HINHTHUCTT</Item>
+      <Item class="java.lang.String">GHICHU</Item>
+   </columnPositions>
+   <columnWidths>
+      <Item>0</Item>
+      <Item>0</Item>
+      <Item>61</Item>
+      <Item>75</Item>
+      <Item>82</Item>
+      <Item>117</Item>
+      <Item>236</Item>
+   </columnWidths>
+   <searchParams class="java.util.ArrayList"/>
+   <sortClauses>
+      <Item/>
+   </sortClauses>
+   <uniqueName>IdeConnections%23loc01-ass2SELECT * FROM "LOC01"."BDSDANGBAN"</uniqueName>
+</TableSettings>

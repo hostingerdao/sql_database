@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[SELECT USERNAME, PROFILE, ACCOUNT_STATUS FROM DBA_USERS;]]></sql>
+		<connection><![CDATA[XE-SYS]]></connection>
+		<timestamp><![CDATA[14:43 07/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.454]]></execTime>
+	</historyItem>
+</history>

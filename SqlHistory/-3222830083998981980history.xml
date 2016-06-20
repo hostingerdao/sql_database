@@ -1,0 +1,15 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[GRANT SELECT, INSERT, UPDATE, DELETE ON GIAODICHTHANHCONG TO KINHDOANH; 
+GRANT SELECT, INSERT, UPDATE, DELETE ON DOANHSOTHANG TO KINHDOANH; 
+GRANT SELECT, INSERT, UPDATE, DELETE ON NHANVIENBH TO KINHDOANH; 
+GRANT SELECT ON BDSDANGBAN TO KINHDOANH; 
+GRANT SELECT ON BDSDANGTHUE TO KINHDOANH;]]></sql>
+		<connection><![CDATA[XE-SYS]]></connection>
+		<timestamp><![CDATA[16:55 07/05/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.366]]></execTime>
+	</historyItem>
+</history>

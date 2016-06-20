@@ -1,0 +1,14 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[update sys.chinhanh set diachi = (
+SELECT TENDUONG || ', ' ||TENPHUONG || ', ' ||TENQUAN || ', ' || TENTP
+FROM sys.DUONG D, sys.PHUONG P, sys.QUAN Q, sys.THANHPHO TP
+where chinhanh.maduong  =  d.maduong and p.maphuong = chinhanh.maphuong and p.maquan = q.maquan and q.matp = tp.matp);]]></sql>
+		<connection><![CDATA[xe-NhanSuAdmin-ass3]]></connection>
+		<timestamp><![CDATA[23:54 08/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.542]]></execTime>
+	</historyItem>
+</history>

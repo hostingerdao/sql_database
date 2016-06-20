@@ -1,0 +1,6 @@
+select * from sys.giaodichthanhcong;
+select * from sys.chuongtrinhkm;
+update sys.chuongtrinhkm set ten='thong' where mact = 1;
+update sys.giaodichthanhcong set banhoacthue='Thue' where mabds='DN000001';
+commit;
+

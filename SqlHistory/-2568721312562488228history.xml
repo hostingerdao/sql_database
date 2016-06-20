@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[SELECT * FROM USER_ROLE_PRIVS;]]></sql>
+		<connection><![CDATA[xe-HRemployee-sysdatabase]]></connection>
+		<timestamp><![CDATA[10:31 04/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.0090]]></execTime>
+	</historyItem>
+</history>

@@ -1,0 +1,12 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into nhanvien  ( manv,HoTen, NgaySinh, CMND, Email, SDT, NamVao, ChucVu, Luong, DiaChi,MaCN) 
+values (0,'Nguyen Van A', '11-11-1990', '123456789','nguyenvana@gmai.com', '0912345678', '1990', 'nhan vien',700000, 'Binh Dinh', 2 );]]></sql>
+		<connection><![CDATA[XE-LOCDINH]]></connection>
+		<timestamp><![CDATA[17:35 13/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[4]]></executed>
+		<execTime><![CDATA[0.01]]></execTime>
+	</historyItem>
+</history>

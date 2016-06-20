@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[GRANT all privileges TO Director WITH ADMIN OPTION;]]></sql>
+		<connection><![CDATA[XE-SYS]]></connection>
+		<timestamp><![CDATA[10:46 04/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[2]]></executed>
+		<execTime><![CDATA[0.255]]></execTime>
+	</historyItem>
+</history>

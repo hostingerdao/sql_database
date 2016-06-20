@@ -1,0 +1,13 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[SELECT nv.*, q.MATP, p.MAQUAN
+FROM SYS.NHANVIEN NV, SYS.DUONG D, SYS.PHUONG P, SYS.QUAN Q 
+WHERE nv.MADUONG = d.MADUONG AND nv.MAPHUONG = p.MAPHUONG AND p.MAQUAN = q.MAQUAN and nv.manv =1;]]></sql>
+		<connection><![CDATA[xe-NhanSuAdmin-ass3]]></connection>
+		<timestamp><![CDATA[09:56 10/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[3]]></executed>
+		<execTime><![CDATA[0.0010]]></execTime>
+	</historyItem>
+</history>

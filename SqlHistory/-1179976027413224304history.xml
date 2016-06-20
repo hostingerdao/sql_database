@@ -1,0 +1,29 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[create or replace trigger gioihan
+after insert or update
+on works_on for each row
+declare
+    min_hours works_on.hours%type := 20;
+    max_hours works_on.hours%type := 48;
+    n_essn works_on.essn%type;
+    n_hours works_on.hours%type;
+begin
+    select essn, total_hours into n_essn, n_hours 
+    from works_on
+    where essn = essn
+    group by (essn);
+    
+    if  n_hours < min_hours and n_hours > max_hours
+    then
+      dbms_output.put_line(-2000, 'Tong so gio lam viec khong phu hop');
+    end if;
+end;]]></sql>
+		<connection><![CDATA[XE-LOCDINH]]></connection>
+		<timestamp><![CDATA[15:54 30/03/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.387]]></execTime>
+	</historyItem>
+</history>

@@ -1,0 +1,173 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<client-settings class="java.util.HashMap" xmlns="http://xmlns.oracle.com/jdeveloper/110000/client-preferences">
+   <Item>
+      <Key>editors-options</Key>
+      <Value class="oracle.ide.editor.EditorsOptions">
+         <editorsData/>
+         <lruFiles>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../ADMIN 4-5(1).sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../HREMPLOYEE 4-5(1).sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../SYS 4-5(1).sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../loc2.sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../loc3.sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../loc1.sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/create date 20.4(1).sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23XE-SYS.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/xe-locdinh-lab6.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23XE-LAB5.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/xe-locdinh-edit_data.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23XE-LAB5.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/ADMIN 4-5(1).sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/dang lam.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/xe-lab5.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/loc3.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/loc2.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/loc1.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/SYS 4-5(1).sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../xe-sys-7-5(1).sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23XE-SYS.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/xe-sys.sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23loc01-ass2.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>false</explicit>
+               <nodeURL path="../../loc4.sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>true</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/create date 20.4(2).sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23xe-director-sysdatabase.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>true</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/nhansuadmin-9-5(1).sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23XE-SYS.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>true</explicit>
+               <nodeURL path="../../loc5.sql"/>
+               <projectURL/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+            <Item class="oracle.ide.editor.RecentFile">
+               <editor>oracle.dbtools.worksheet.extension.WorksheetAddin</editor>
+               <explicit>true</explicit>
+               <nodeURL path="../../../../../../LONGDI~1/AppData/Roaming/SQL Developer/xe-sys-7-5(1).sql"/>
+               <projectURL protocol="sqldev.temp" path="/IdeConnections%23XE-SYS.jpr"/>
+               <workspaceURL protocol="sqldev.temp" path="/Databases.jws"/>
+            </Item>
+         </lruFiles>
+         <recentFilesShowAll>false</recentFilesShowAll>
+      </Value>
+   </Item>
+</client-settings>

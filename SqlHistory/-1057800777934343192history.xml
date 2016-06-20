@@ -1,0 +1,12 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into works_on
+values('123456789', '30', '20');]]></sql>
+		<connection><![CDATA[XE-LOCDINH]]></connection>
+		<timestamp><![CDATA[12:12 01/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[47]]></executed>
+		<execTime><![CDATA[0.0050]]></execTime>
+	</historyItem>
+</history>

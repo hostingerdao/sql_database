@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into tindang values('KH00000003',  TO_date('12-08-2015 00:00:00', 'DD/MM/YYYY HH24:MI:SS') , TO_date('12-08-2016 00:00:00', 'DD/MM/YYYY HH24:MI:SS') );]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[17:08 19/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.01]]></execTime>
+	</historyItem>
+</history>

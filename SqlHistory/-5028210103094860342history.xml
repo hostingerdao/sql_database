@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[file:/C:/Users/LONGDI~1/AppData/Roaming/SQL Developer/xe-sys-7-5(1).sql]]></sql>
+		<connection><![CDATA[XE-SYS]]></connection>
+		<timestamp><![CDATA[13:33 11/05/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[16]]></executed>
+		<execTime><![CDATA[0.0020]]></execTime>
+	</historyItem>
+</history>

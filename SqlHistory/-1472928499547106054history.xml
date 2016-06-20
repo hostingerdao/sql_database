@@ -1,0 +1,14 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[GRANT SELECT ON THANHPHO TO NHANSUADMIN; 
+GRANT SELECT ON QUAN TO NHANSUADMIN; 
+GRANT SELECT ON HUYEN TO NHANSUADMIN; 
+GRANT SELECT ON duong TO NHANSUADMIN;]]></sql>
+		<connection><![CDATA[XE-SYS]]></connection>
+		<timestamp><![CDATA[21:18 08/05/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[2.134]]></execTime>
+	</historyItem>
+</history>

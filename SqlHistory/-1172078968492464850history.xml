@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into bdscsht values('CSHT0001', 'CH000001', 0.7);]]></sql>
+		<connection><![CDATA[XE-LOCDINH]]></connection>
+		<timestamp><![CDATA[14:48 15/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.01]]></execTime>
+	</historyItem>
+</history>

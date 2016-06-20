@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select * from sys.khachhang;]]></sql>
+		<connection><![CDATA[XE-DangTin-ass3]]></connection>
+		<timestamp><![CDATA[17:52 07/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[2]]></executed>
+		<execTime><![CDATA[0.0020]]></execTime>
+	</historyItem>
+</history>

@@ -1,0 +1,2 @@
+select manv from sys.nhanvienbh;
+select * from sys.chuongtrinhkm;

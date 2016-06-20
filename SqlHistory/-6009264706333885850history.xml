@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select * from sys.giaodichthanhcong;]]></sql>
+		<connection><![CDATA[xe-KinhDoanhA-ass3]]></connection>
+		<timestamp><![CDATA[13:43 11/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[3]]></executed>
+		<execTime><![CDATA[0.0030]]></execTime>
+	</historyItem>
+</history>

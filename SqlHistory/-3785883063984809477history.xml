@@ -1,0 +1,500 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[create table ThanhPho (
+MaTP char(6) primary key, 
+TenTP varchar(30) unique,
+constraint format_thanhpho check( regexp_like(matp,'^TP\d{4}$'))
+);
+--29 end ------------------------------------------------------------------------------------------------
+
+--30-----------------------------------------------------------------------------------------------------
+create table Quan (
+MaQuan char(5) primary key, 
+TenQuan varchar(30) not null, 
+MaTP char(6) not null,
+constraint fk_Quan_ThanhPho_matp foreign key (matp) references thanhpho(matp) on delete cascade,
+constraint format_Quan check( regexp_like(maQuan,'^Q\d{4}$'))
+);
+--30 end ------------------------------------------------------------------------------------------------
+
+--31-----------------------------------------------------------------------------------------------------
+create table Phuong (
+MaPhuong char(5) primary key, 
+TenPhuong varchar(30) not null, 
+MaQuan char(5) not null,
+constraint fk_Quan_MaQuan foreign key (maquan) references Quan(maquan) on delete cascade,
+constraint format_MaPhuong check( regexp_like(maPhuong,'^P\d{4}$'))
+);
+--31 end ------------------------------------------------------------------------------------------------
+
+--32-----------------------------------------------------------------------------------------------------
+ create table Duong (
+ MaDuong char(5) primary key, 
+ TenDuong varchar(30),
+ constraint format_duong check( regexp_like(maduong,'^D\d{4}$'))
+ );
+--32 end ------------------------------------------------------------------------------------------------
+
+--33-----------------------------------------------------------------------------------------------------
+ create table DuongThuocPhuong (
+ MaDuong char(5), 
+ MaPhuong char(5),
+ constraint pk_DuongThuocPhuong primary key( maduong, maphuong)
+ );
+--33 end ------------------------------------------------------------------------------------------------
+--1------------------------------------------------------------------------------------------------
+create table ChiNhanh (
+	MaCN int primary key, 
+	TenCN varchar(15) unique,
+	SoFax varchar(11) ,
+  maduong char(5),
+  maphuong char(5),
+	DiaChi varchar(100), 
+	MaNVTruong int,
+  constraint fk_ChiNhanh_MaDuong foreign key (maduong) references duong(maduong) on delete set null,
+  constraint fk_ChiNhanh_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null,
+  CONSTRAINT format_Chinhanh_SoFax      
+      CHECK ( REGEXP_LIKE ( SoFax, '^\d{10,11}$' ) )
+);
+--1 end------------------------------------------------------------------------------------------------
+
+--2------------------------------------------------------------------------------------------------
+create table ChiNhanhSDT (
+	MaCN int, 
+	SDT varchar(11),
+  primary key (macn, sdt),
+	constraint fk_ChiNhanhSDT_ChiNhanh_MaCN foreign key(MaCN) references ChiNhanh(MaCN) on delete cascade,
+  constraint format_ChinhanhSDT_SDT check (REGEXP_LIKE(SDT, '^\d{10,11}$'))
+	);
+--2 end------------------------------------------------------------------------------------------------
+
+--3------------------------------------------------------------------------------------------------
+create table NhanVien (
+MaNV int primary key, 
+HoTen varchar(30), 
+NgaySinh date, 
+CMND varchar(12) not null unique, 
+Email varchar(30), 
+SDT varchar(11), 
+NamVao char(4), 
+ChucVu varchar(30), 
+Luong decimal(10), 
+ maduong char(5),
+  maphuong char(5),
+DiaChi varchar(100),
+MaCN int,
+constraint fk_Nhanvien_MaDuong foreign key (maduong) references duong(maduong) on delete set null,
+ constraint fk_Nhanvien_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null,
+constraint fk_NhanVien_ChiNhanh_MaCN foreign key (MaCN) references Chinhanh(macn) on delete set null,
+constraint format_Nhanvien_cmnd check (regexp_like(cmnd,'^\d{9}|\d{11}')),
+constraint format_Nhanvien_email check(regexp_like(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+')),
+constraint format_Nhanvien_SDT check (REGEXP_LIKE(SDT, '^\d{10,11}$')),
+constraint format_Nhanvien_namvao check(namvao > '1900' and regexp_like(namvao, '^\d{4}$') )
+);
+
+create sequence seq_MaNhanVien
+minvalue 1
+start with 13
+increment by 1;
+
+--3 end------------------------------------------------------------------------------------------------
+
+alter table chinhanh 
+add constraint fk_ChiNhanh_MaNVTruong foreign key (maNVTruong) references Nhanvien(Manv) on delete set null DEFERRABLE;
+
+--4-----------------------------------------------------------------------------------------------------
+create table DoiTac (
+MaDT int primary key,
+Ten varchar(30) not null unique, 
+HoTenNLL varchar(30) not null, 
+SDTNLL varchar(11),
+maduong char(5),
+maphuong char(5),
+DiaChi varchar(100), 
+MaNV int,
+constraint fk_doitac_MaDuong foreign key (maduong) references duong(maduong) on delete set null,
+constraint fk_doitac_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null,
+constraint fk_doitac_nhanvien_manv foreign key(manv) references nhanvien(manv) on delete set null,
+constraint format_doitac_SDTNLL check (REGEXP_LIKE(SDTNLL, '^\d{10,11}$'))
+);
+--4 end ------------------------------------------------------------------------------------------------
+
+--5-----------------------------------------------------------------------------------------------------
+create table NhanVienBH (
+MaNV int primary key, 
+TongDoanhSo int default 0,
+constraint fk_Nhanvienbh_nhanvien_manv foreign key(Manv) references nhanvien(manv) on delete cascade
+);
+--5 end ------------------------------------------------------------------------------------------------
+
+--6-----------------------------------------------------------------------------------------------------
+create table DoanhSoThang (
+MaNV int, 
+Nam char(4) , 
+Thang char(2) , 
+DoanhSo int default 0,
+primary key (Manv,nam, thang),
+constraint fk_doanhsothang_nhanvien_manv foreign key(manv) references nhanvien(manv) on delete cascade,
+constraint format_doanhsothang_thang check( thang > '00' and thang < '13' and regexp_like(thang, '\d\d')),
+constraint format_doandsothang_nam check( nam > '1900' and nam <= '9999' and regexp_like(nam, '\d{4}'))
+);
+--6 end ------------------------------------------------------------------------------------------------
+
+--7-----------------------------------------------------------------------------------------------------
+create table TinDang (
+MaTin char(10) primary key, 
+ThoiGianBD date, 
+ThoiGianKT date,
+constraint format_tindang_thoigian check(thoigianbd < thoigiankt)
+);
+
+CREATE SEQUENCE seq_matindang_KH
+START WITH 4
+maxvalue 99999999
+INCREMENT BY 1
+cache 10;
+
+CREATE SEQUENCE seq_matindang_CT
+START WITH 4
+maxvalue 99999999
+INCREMENT BY 1  
+cache 10;
+--7 end ------------------------------------------------------------------------------------------------
+
+--8-----------------------------------------------------------------------------------------------------
+create table KhachHang (
+MaKH char(10) primary key, 
+HoTen varchar(30) not null, 
+NamSinh char(4), 
+CMND varchar(11) unique, 
+Email varchar(30), 
+SDT varchar(11), 
+maduong char(5),
+maphuong char(5),
+DiaChi varchar(30),
+constraint fk_KhachHang_MaDuong foreign key (maduong) references duong(maduong) on delete set null,
+constraint fk_KhachHang_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null,
+constraint format_Khachhang_cmnd check (regexp_like(cmnd, '^\d{9}$|\d{11}$')),
+constraint format_Khachhang_SDT check (REGEXP_LIKE(SDT, '^\d{10,11}$')),
+constraint format_Khachhang_email check(regexp_like(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+')),
+constraint format_Khachhang_namsinh check( namsinh > '1900' and namsinh <= '9999' and regexp_like(namsinh, '\d{4}'))
+);
+
+
+create sequence seq_makh_kh
+start with 1
+increment by 1
+maxvalue 99999999
+cache 10;
+
+create sequence seq_makh_ct
+start with 1
+increment by 1
+maxvalue 99999999
+cache 10;
+--8 end ------------------------------------------------------------------------------------------------
+
+--9-----------------------------------------------------------------------------------------------------
+create table TinKhachHang (
+MaTin char(10), 
+MaKH char(10) , 
+GiaTin decimal(10,0), 
+HueHong number(4,3),
+primary key(matin, makh),
+constraint fk_tinkhachhang_tindang_matin foreign key (MaTin) references tindang(matin) on delete cascade,
+constraint fk_tinkhachhang_khachhang_makh foreign key (Makh) references khachhang(makh) on delete set null,
+constraint format_tinkhachhang_huehong check (huehong > 0.000 and huehong < 1.000)
+);
+--9 end ------------------------------------------------------------------------------------------------
+
+--10-----------------------------------------------------------------------------------------------------
+create table TinNhanVienBH (
+MaTin char(20), 
+MaNVBH int,
+primary key (matin, manvbh),
+constraint fk_tinnhanvienbh_matin foreign key (matin) references tindang(matin) on delete set null,
+constraint fk_tinnhanvienbh_manvbh foreign key ( manvbh) references nhanvienbh(manv) on delete set null
+);
+--10 end ------------------------------------------------------------------------------------------------
+
+--11-----------------------------------------------------------------------------------------------------
+create table BatDongSan (
+MaBDS char(8) primary key
+);
+
+create sequence seq_MaBds_CH -- for can ho
+start with 1
+increment by 1
+maxvalue 999999
+cache 10;
+
+create sequence seq_MaBds_NP -- for nha pho
+start with 1
+increment by 1
+maxvalue 999999
+cache 10;
+
+create sequence seq_MaBds_DN -- for dat nen
+start with 1
+increment by 1
+maxvalue 999999
+cache 10;
+--11 end ------------------------------------------------------------------------------------------------
+
+--12-----------------------------------------------------------------------------------------------------
+ create table BDSDangBan (
+ MaBDS char(8), 
+ MaTin char(10) , 
+ GiaBan number(12,0), 
+ HinhThucTT varchar(30), 
+ GhiChu varchar(100),
+ primary key(MaBDS, MaTin),
+ constraint fk_BDSDangBan_BDS_MaBDS foreign key (mabds) references batdongsan(mabds) on delete set null,
+ constraint fk_BDSDanbBan_TinDang_Matin foreign key (matin) references tindang(matin) on delete set  null 
+ );
+--12 end ------------------------------------------------------------------------------------------------
+
+--13-----------------------------------------------------------------------------------------------------
+create table BDSDangThue (
+MaBDS char(8), 
+MaTin char(10) , 
+TienCoc number(12,0), 
+ThoiHan number(3,0),
+GiaThue number (12,0), 
+GhiChu varchar(100),
+constraint pk_bdsdangthue primary key(mabds, matin),
+constraint fk_dbsDangThue_bds_mabds foreign key( mabds) references batdongsan(mabds),
+constraint fk_dbsDangThue_tindang_matin foreign key(matin) references tindang(matin)
+);
+--13 end ------------------------------------------------------------------------------------------------
+
+--14-----------------------------------------------------------------------------------------------------
+create table GiaoDichThanhCong (
+MaBDS char(8) primary key, 
+MaNV int not null, 
+Nam char(4), 
+Thang char(2), 
+Ngay char(2), 
+Gia number(12,0), 
+BanHoacThue varchar(4),
+constraint fk_gdtc_mabds foreign key (mabds) references batdongsan(mabds) on delete cascade,
+constraint fk_gdtc_manv_nam_thang foreign key (manv, nam, thang) references Doanhsothang(manv, nam, thang) on delete set null
+);
+--14 end ------------------------------------------------------------------------------------------------
+
+--15-----------------------------------------------------------------------------------------------------
+ create table ChuongTrinhKM (
+ MaCT int primary key, 
+ Ten varchar(50), 
+ MoTa varchar(200), 
+ ThoiGianBD date, 
+ ThoiGianKT date,
+ constraint format_ctkm_thoigian check(thoigianbd < thoigiankt)
+ );
+ 
+ create sequence seq_mact
+ start with 1
+ increment by 1
+ maxvalue 10000
+ cache 10;
+ 
+--15 end ------------------------------------------------------------------------------------------------
+
+--16-----------------------------------------------------------------------------------------------------
+create table BDSKM (
+MaCT int, 
+MaBDS char(8), 
+ThanhCong number(1,0) default 0,
+primary key (mact, mabds),
+constraint fk_bdskm_chuongtrinhkm_mact foreign key (mact) references ChuongTrinhKM(MaCT) on delete cascade,
+constraint fk_bdskm_bds_mabds foreign key (mabds) references batdongsan(Mabds) on delete set null,
+constraint format_thangcong check(thanhcong = 0 or thanhcong = 1)
+);
+--16 end ------------------------------------------------------------------------------------------------
+--18-----------------------------------------------------------------------------------------------------
+create table LoaiCSHT (
+TenLoaiCSHT varchar(30) primary key
+);
+
+--18 end ------------------------------------------------------------------------------------------------
+
+
+--17-----------------------------------------------------------------------------------------------------
+create table CoSoHaTang (
+MaCSHT char(8) primary key, 
+Ten varchar(30), 
+So varchar(6), 
+MaDuong char(5), 
+MaPhuong char(5), 
+TenLoaiCSHT varchar(30),
+constraint format_csht_mcsht check (regexp_like(macsht,'^CSHT\d{4}')),
+constraint fk_CSHT_MaDuong foreign key (maDuong) references Duong(MaDuong) on delete set null,
+constraint fk_CSHT_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null,
+constraint fk_CSHT_TenLoaiCSHT foreign key (TenLoaiCSHT) references LoaiCSHT(TenLoaiCSHT) on delete set null
+);
+--17 end ------------------------------------------------------------------------------------------------
+
+
+
+
+--19-----------------------------------------------------------------------------------------------------
+create table BDSCSHT (
+MaCSHT char(8), 
+MaBDS char(8),
+KhoangCach number(2,1),
+constraint pk_BDSCSHT primary key (MaCSHT,MaBDS),
+constraint fk_BDSCSHT_MaBDS foreign key (maBDS) references batdongsan(mabds) on delete cascade,
+constraint fk_BDSCSHT_MaCSHT foreign key (MaCSHT) references CoSoHaTang(Macsht) on delete cascade,
+constraint format_Khoangcach check(khoangcach >= 0 and khoangcach <=7 )
+
+);
+--19 end ------------------------------------------------------------------------------------------------
+
+
+--20-----------------------------------------------------------------------------------------------------
+  create table ChungCu (
+  MaCC char(6) primary key, 
+  Ten varchar(30), 
+NamXD char(4), 
+So varchar(6), 
+MaDuong char(5), 
+MaPhuong char(5), 
+TongTang int, 
+TongCH int, 
+PhiSH number(10,0),
+SoThangMay int, 
+SoThangBo int, 
+TienIchRieng varchar(100),
+constraint format_macc check(regexp_like(macc, '^CC\d{4}$')),
+constraint format_nam check(regexp_like(namxd, '^\d{4}$')),
+constraint fk_ChungCu_MaDuong foreign key (maDuong) references Duong(MaDuong) on delete set null,
+constraint fk_ChungCu_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null
+);
+--20 end ------------------------------------------------------------------------------------------------
+
+--21-----------------------------------------------------------------------------------------------------
+create table ChungCuAnh (
+MaCC char(6), 
+Anh varchar(150),
+primary key(macc, anh),
+constraint fk_ChungCuAnh_MaCC foreign key (maCC) references ChungCu(MaCC) on delete cascade
+);
+--21 end ------------------------------------------------------------------------------------------------
+
+--22-----------------------------------------------------------------------------------------------------
+create table CanHo (
+MaCC char(6), 
+SoCH varchar(6), 
+STTTang int , 
+DienTich int, 
+SoPN int, 
+Huong varchar(20), 
+TinhTrang varchar(8), 
+GiayTo varchar(20),
+ThongTinThem varchar(200), 
+MaBDS char(8),
+constraint pk_Canho primary key (macc, soch),
+constraint fk_CanHo_MaCC foreign key (macc) references chungcu(macc) on delete cascade,
+constraint fk_CanHo_MaBDS foreign key (maBDS) references batdongsan(mabds) on delete  set null,
+constraint format_TinhTrang check (TinhTrang =  'Moi' or TinhTrang = 'DaSuDung')
+);
+--22 end ------------------------------------------------------------------------------------------------
+
+
+--23-----------------------------------------------------------------------------------------------------
+create table CanHoAnh (
+MaCC char(6), 
+SoCH varchar(6), 
+Anh varchar(120),
+primary key(MaCC, SoCH, Anh),
+constraint fk_CanHoAnh_CanHo foreign key (MaCC, SoCH) references Canho(MaCC, SoCH) on delete cascade
+);
+--23 end ------------------------------------------------------------------------------------------------
+
+
+--24-----------------------------------------------------------------------------------------------------
+create table  NhaPho (
+MaNha char(6), 
+So varchar(6), 
+MaDuong char(5), 
+MaPhuong char(5), 
+KichThuoc varchar(7), 
+DienTich int, 
+NamXD char(4), 
+LoaiNha varchar(20), 
+SoPN int,
+Huong varchar(20), 
+TinhTrang varchar(8), 
+GiayTo varchar(20), 
+ThongTinThem varchar(200), 
+MaBDS char(8),
+constraint pk_nhapho primary key(manha),
+constraint foramt_MaNha check(regexp_like(manha,'^NP\d{4}')),
+constraint format_NhaPho_TinhTrang check (TinhTrang =  'Moi' or TinhTrang = 'DaSuDung'),
+constraint fk_NhaPho_MaDuong foreign key (maduong) references duong(maduong) on delete set null,
+constraint fk_NhaPho_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null,
+constraint fk_NhaPho_Mabds foreign key (mabds) references batdongsan(Mabds) on delete set null
+);
+--24 end ------------------------------------------------------------------------------------------------
+
+
+--25-----------------------------------------------------------------------------------------------------
+create table NhaPhoAnh (
+MaNha char(6), 
+Anh varchar(120),
+constraint pk_NhaPhoAnh primary key(manha, anh),
+constraint fk_NhaPhoAnh_maNha foreign key (manha) references nhapho(Manha) on delete cascade
+);
+--25 end ------------------------------------------------------------------------------------------------
+
+--26-----------------------------------------------------------------------------------------------------
+create table KhuDuAn (
+MaKDA char(7) primary key, 
+Ten varchar(30) not null, 
+TienIchRieng varchar(100), 
+So varchar(6), 
+MaDuong char(5), 
+MaPhuong char(5),
+constraint foramt_KhuDuAn check(regexp_like(maKDA,'^KDA\d{4}')),
+constraint fk_KhuDuAn_MaDuong foreign key (maDuong) references Duong(MaDuong) on delete set null,
+constraint fk_KhuDuAn_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null
+);
+--26 end ------------------------------------------------------------------------------------------------
+
+
+--27-----------------------------------------------------------------------------------------------------
+create table DatNen (
+MaKDA char(7), 
+SoLo varchar(7), 
+KichThuoc varchar(10), 
+DienTich int, 
+GiayPhepXD varchar(20), 
+Huong varchar(20), 
+ThongTinThem varchar(100),
+MaBDS char(8), 
+constraint pk_DatNen primary key(makda, solo),
+constraint fk_DatNen_MaKDA foreign key (MaKDA) references KhuDuAn(maKDA) on delete cascade,
+constraint fk_DatNen_MaBDS foreign key (maBDS) references batdongsan(mabds) on delete  set null
+);
+--27 end ------------------------------------------------------------------------------------------------
+
+
+--28-----------------------------------------------------------------------------------------------------
+
+create table DatNenAnh (
+MaKDA char(7), 
+SoLo varchar(7), 
+Anh varchar(120),
+primary key(MaKDA, SoLo, Anh),
+constraint fk_DatNenAnh_MaKDA foreign key (MaKDA, SoLo) references DatNen(MaKDA, SoLo) on delete cascade
+);
+
+--28 end ------------------------------------------------------------------------------------------------]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[18:47 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[1.512]]></execTime>
+	</historyItem>
+</history>

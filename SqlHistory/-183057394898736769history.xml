@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[SELECT MADT, TEN FROM SYS.DOITAC where manv = 1;]]></sql>
+		<connection><![CDATA[xe-NhanSuAdmin-ass3]]></connection>
+		<timestamp><![CDATA[14:10 10/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.041]]></execTime>
+	</historyItem>
+</history>

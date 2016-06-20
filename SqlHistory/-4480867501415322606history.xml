@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[grant create table to Admin;]]></sql>
+		<connection><![CDATA[xe-director-sysdatabase]]></connection>
+		<timestamp><![CDATA[10:07 04/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[3]]></executed>
+		<execTime><![CDATA[0.021]]></execTime>
+	</historyItem>
+</history>

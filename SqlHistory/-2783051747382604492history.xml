@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select count(*) from sys.chinhanh, sys.nhanvien where sys.chinhanh.macn = '1' and sys.nhanvien.macn = sys.chinhanh.macn;]]></sql>
+		<connection><![CDATA[xe-NhanSuAdmin-ass3]]></connection>
+		<timestamp><![CDATA[15:59 09/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.026]]></execTime>
+	</historyItem>
+</history>

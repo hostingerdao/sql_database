@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[create table TinNhanVienBH (
+MaTin char(10), 
+MaNVBH int,
+primary key (matin, manvbh),
+constraint fk_tinnhanvienbh_matin foreign key (matin) references tindang(matin) on delete set null,
+constraint fk_tinnhanvienbh_manvbh foreign key ( manvbh) references nhanvienbh(manv) on delete set null
+);]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[18:52 18/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.031]]></execTime>
+	</historyItem>
+</history>

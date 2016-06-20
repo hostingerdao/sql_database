@@ -1,0 +1,43 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[create table KhachHang (
+MaKH varchar(20) primary key, 
+HoTen varchar(30) not null, 
+NamSinh char(4), 
+CMND varchar(11) unique, 
+Email varchar(30), 
+SDT varchar(11), 
+maduong char(5),
+  maphuong char(5),
+DiaChi varchar(30),
+constraint fk_KhachHang_MaDuong foreign key (maduong) references duong(maduong) on delete set null,
+ constraint fk_KhachHang_MaPhuong foreign key (maPhuong) references Phuong(MaPhuong) on delete set null,
+constraint format_Khachhang_cmnd check (regexp_like(cmnd, '^\d{9}$|\d{11}$')),
+constraint format_Khachhang_SDT check (REGEXP_LIKE(SDT, '^\d{10,11}$')),
+constraint format_Khachhang_email check(regexp_like(email, '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+')),
+constraint format_Khachhang_namsinh check( namsinh > '1900' and namsinh <= '9999' and regexp_like(namsinh, '\d{4}'))
+);
+
+drop sequence seq_makh_kh;
+drop sequence seq_makh_ct;
+
+create sequence seq_makh_kh
+start with 1
+increment by 1
+maxvalue 99999999
+cache 10;
+
+create sequence seq_makh_ct
+start with 1
+increment by 1
+maxvalue 99999999
+cache 10;
+--8 end ------------------------------------------------------------------------------------------------]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[17:35 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.094]]></execTime>
+	</historyItem>
+</history>

@@ -1,0 +1,23 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[create table DatNen (
+MaKDA char(7), 
+SoLo varchar(7), 
+KichThuoc varchar(10), 
+DienTich int, 
+GiayPhepXD varchar(20), 
+Huong varchar(20), 
+ThongTinThem varchar(100),
+MaBDS char(8), 
+constraint pk_DatNen primary key(makda, solo),
+constraint fk_DatNen_MaKDA foreign key (MaKDA) references KhuDuAn(maKDA) on delete cascade,
+constraint fk_DatNen_MaBDS foreign key (maBDS) references batdongsan(mabds) on delete  set null
+);]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[18:06 18/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.031]]></execTime>
+	</historyItem>
+</history>

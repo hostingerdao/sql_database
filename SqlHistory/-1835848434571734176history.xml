@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[grant create table, drop any table to Admin with admin option;]]></sql>
+		<connection><![CDATA[xe-director-sysdatabase]]></connection>
+		<timestamp><![CDATA[12:47 04/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[8]]></executed>
+		<execTime><![CDATA[0.047]]></execTime>
+	</historyItem>
+</history>

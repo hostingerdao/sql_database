@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select dno, max(num_proj) as maxi
+from
+  (select ssn, dno, count(*) as num_proj
+  from employee, works_on
+  where ssn = essn
+  group by ssn, dno)
+group by dno;]]></sql>
+		<connection><![CDATA[XE-LOCDINH]]></connection>
+		<timestamp><![CDATA[09:28 30/03/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[2]]></executed>
+		<execTime><![CDATA[0.0020]]></execTime>
+	</historyItem>
+</history>

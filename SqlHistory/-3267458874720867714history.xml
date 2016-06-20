@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into bdsdangban values('CH000002', 'CT00000001', 10000000000, 'Thanh toan 1 lan', 'De biet them thong tin lien he...');]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[20:01 19/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.0050]]></execTime>
+	</historyItem>
+</history>

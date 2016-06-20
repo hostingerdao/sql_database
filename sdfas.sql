@@ -1,0 +1,1 @@
+grant all privilege to locdinh;

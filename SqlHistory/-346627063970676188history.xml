@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[update sys.giaodichthanhcong set banhoacthue='Thue' where mabds='DN000001';]]></sql>
+		<connection><![CDATA[xe-KinhDoanhA-ass3]]></connection>
+		<timestamp><![CDATA[13:43 11/05/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.0040]]></execTime>
+	</historyItem>
+</history>

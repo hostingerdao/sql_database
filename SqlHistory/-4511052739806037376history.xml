@@ -1,0 +1,14 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into ChuongTrinhKM values(3, 'Giai phong hoan toan mien Nam', 'Chuong trinh co gia tri tren toan quoc', '11-03-2016', '11-04-2016');
+insert into ChuongTrinhKM values(4, 'Quoc Khanh 2-9', 'Chuong trinh co gia tri tren toan quoc', '01-09-2016', '05-09-2016');
+insert into ChuongTrinhKM values(5, 'Quoc te phu nu', 'Chuong trinh co gia tri tren toan quoc', '06-03-2016', '08-03-2016');
+insert into ChuongTrinhKM values(6, 'Sinh nhat la thu 10', 'Chuong trinh co gia tri tren toan quoc', '10-10-2016', '13-10-2016');]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[19:19 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.0]]></execTime>
+	</historyItem>
+</history>

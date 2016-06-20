@@ -1,0 +1,14 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into GiaoDichThanhCong values('NP000002', 8, '2016','01','09', 12000000, 'Thue' );
+insert into GiaoDichThanhCong values('NP000001', 9, '2016','02','13', 10300000, 'Ban' );
+insert into GiaoDichThanhCong values('CH000001', 9, '2016','01','28', 12000000, 'Ban' );
+insert into GiaoDichThanhCong values('CH000002', 10, '2016','02','21', 15000000, 'Thue' );]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[19:14 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.031]]></execTime>
+	</historyItem>
+</history>

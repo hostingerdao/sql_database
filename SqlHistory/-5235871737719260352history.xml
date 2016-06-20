@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into tindang values('CT00000001',  TO_date('12-08-2015 10:02:30', 'DD/MM/YYYY HH24:MI:SS') , TO_date('10-08-2016 01:02:30', 'DD/MM/YYYY HH24:MI:SS') );
+insert into tindang values('CT00000002',  TO_date('12-08-2015 10:02:30', 'DD/MM/YYYY HH24:MI:SS') , TO_date('13-07-2016 01:02:30', 'DD/MM/YYYY HH24:MI:SS') );
+insert into tindang values('CT00000002',  TO_date('12-08-2015 10:02:30', 'DD/MM/YYYY HH24:MI:SS') , TO_date('12-06-2016 01:02:30', 'DD/MM/YYYY HH24:MI:SS') );
+insert into tindang values('CT00000002',  TO_date('12-08-2015 10:02:30', 'DD/MM/YYYY HH24:MI:SS') , TO_date('13-05-2016 01:02:30', 'DD/MM/YYYY HH24:MI:SS') );
+insert into tindang values('CT00000002',  TO_date('12-08-2015 10:02:30', 'DD/MM/YYYY HH24:MI:SS') , TO_date('12-05-2016 01:02:30', 'DD/MM/YYYY HH24:MI:SS') );
+insert into tindang values('CT00000002',  TO_date('12-08-2015 10:02:30', 'DD/MM/YYYY HH24:MI:SS') , TO_date('22-05-2016 01:02:30', 'DD/MM/YYYY HH24:MI:SS') );
+ALTER SESSION SET NLS_DATE_FORMAT='DD-MM-YYYY';]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[19:55 19/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.189]]></execTime>
+	</historyItem>
+</history>

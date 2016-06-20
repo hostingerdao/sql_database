@@ -1,0 +1,17 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[select distinct bds.mabds
+from batdongsan bds, bdsdangban b , bdsdangthue t
+where (bds.mabds = b.mabds or b.mabds = b.mabds)
+--and bds.mabds not in (
+--        select mabds
+--        from GiaoDichThanhCong)
+        ;]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[10:31 20/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[2]]></executed>
+		<execTime><![CDATA[0.0]]></execTime>
+	</historyItem>
+</history>

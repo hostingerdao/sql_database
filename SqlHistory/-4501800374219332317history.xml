@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[delete doanhsothang where manv =9 and nam ='2016'  and thang = '03';]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[16:33 19/04/2016]]></timestamp>
+		<type><![CDATA[SQL]]></type>
+		<executed><![CDATA[29]]></executed>
+		<execTime><![CDATA[0.0050]]></execTime>
+	</historyItem>
+</history>

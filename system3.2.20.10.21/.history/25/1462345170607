@@ -1,0 +1,87 @@
+--1. 
+--a.
+create user Developer identified by Developer default tablespace users
+temporary tablespace temp;
+
+create user HRmanager identified by HRmanager default tablespace users
+temporary tablespace temp;
+
+create user HRemployee identified by HRemployee default tablespace users
+temporary tablespace temp;
+
+create user Accountant identified by Accountant default tablespace users
+temporary tablespace temp;
+
+create user Adminuser identified by Adminuser default tablespace users
+temporary tablespace temp;
+
+create user Admin identified by Admin default tablespace users
+temporary tablespace temp;
+
+
+create user Director identified by Director default tablespace users
+temporary tablespace temp;
+
+--b. 
+grant select on EMPLOYEE to Director;
+--Status : Failure -Test failed: ORA-01045: user DIRECTOR lacks CREATE SESSION privilege; logon denied
+
+--c. 
+grant create session to Director;
+
+select *
+from sys.employee;
+
+--d.
+grant create session to Developer, HRmanager, HRemployee, Accountant, Admin;
+
+--e. 
+grant all privileges to Director;
+
+REVOKE all privileges FROM Director;
+
+GRANT all privileges TO Director WITH ADMIN OPTION;
+
+grant drop any table to Admin;
+
+--f.
+--Gán quy?n SELECT, UPDATE, INSERT, DELETE d? li?u c?a b?ng Employee, Dependent cho HRmanager.
+grant select, update, insert, delete on employee to HRmanager;
+grant select, update, insert, delete on Dependent to HRmanager;
+
+--g.
+--Gán quy?n SELECT d? li?u c?a b?ng Employee, quy?n INSERT và UPDATE trên c?t Salary c?a b?ng Employee cho Accountant.
+grant select on employee to Accountant;
+grant insert(salary) on employee to Accountant;
+grant update(salary) on employee to Accountant;
+
+
+--h. Gán quy?n SELECT trên c?t Salary c?a b?ng Employee cho Accountant. Gi?i thích hi?n tý?ng.
+grant select(salary) on employee to Accountant;
+--khong thuc hien dc vi select chi khong thuc hien dc o level column 
+--only insert, update, references privileges can be granted at the column level;
+
+--i. Dùng tài kho?n Director gán các quy?n cho phép Admin có th? t?o và xóa các b?ng trong Company
+--và cho phép Admin có th? c?p l?i các quy?n ðó cho user khác.
+--LUU Y: THUC HIEN O TAI KHOAN USER DIRECTOR
+--grant create table, drop any table to Admin with admin option;
+
+--j. Gán quy?n SELECT trên b?ng Employee, quy?n UPDATE trên c?t Address c?a b?ng Employee cho
+--HRemployee và cho phép HRemployee c?p l?i các quy?n ðó cho user khác.
+grant select on employee to HRemployee with grant option;
+--revoke select on employee to HRemployee;
+grant  update(address) on employee to HRemployee with grant option;
+--gop lai thi bi loi
+
+
+--k. Dùng tài kho?n HRemployee c?p quy?n SELECT trên b?ng Employee, quy?n UPDATE trên c?t
+--Address c?a b?ng Employee cho Developer.
+--LUU Y: lenh nay run trong tai khoan hremployee;
+grant select on sys.employee to Developer;
+--SELECT * FROM USER_SYS_PRIVS; 
+--SELECT * FROM USER_TAB_PRIVS;
+--SELECT * FROM USER_ROLE_PRIVS;
+
+--l. Thu h?i t?t c? các quy?n h? th?ng c?a Director. Admin có c?n quy?n t?o và xóa b?ng trong
+--Company hay không?
+

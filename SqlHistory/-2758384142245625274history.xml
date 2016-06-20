@@ -1,0 +1,11 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[file:/C:/Users/LONGDI~1/AppData/Roaming/SQL Developer/nhansuadmin-9-5(1).sql]]></sql>
+		<connection><![CDATA[xe-NhanSuAdmin-ass3]]></connection>
+		<timestamp><![CDATA[14:49 10/05/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[61]]></executed>
+		<execTime><![CDATA[0.0080]]></execTime>
+	</historyItem>
+</history>

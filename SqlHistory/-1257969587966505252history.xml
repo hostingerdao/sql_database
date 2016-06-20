@@ -1,0 +1,15 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into tinkhachhang values('CT00000002', 'CT00000001', 700000,0.070);
+insert into tinkhachhang values('CT00000003', 'CT00000001', 700000,0.070);
+insert into tinkhachhang values('KH00000001', 'CT00000001', 700000,0.070);
+insert into tinkhachhang values('KH00000002', 'CT00000001', 700000,0.070);
+insert into tinkhachhang values('KH00000003', 'CT00000001', 700000,0.070);]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[18:47 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.015]]></execTime>
+	</historyItem>
+</history>

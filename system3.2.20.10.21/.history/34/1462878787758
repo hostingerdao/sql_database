@@ -1,0 +1,84 @@
+SELECT sys.chinhanh.MACN, TENCN, SOFAX, sys.chinhanh.DIACHI, SYS.NHANVIEN.HOTEN as "Tr\u01B0\u1EDFng Chi Nh\u00E1nh"
+FROM SYS.CHINHANH, SYS.NHANVIEN
+WHERE SYS.CHINHANH.MANVTRUONG = SYS.NHANVIEN.MANV;
+
+SELECT COUNT(*) AS NUM
+FROM SYS.CHINHANH
+WHERE SYS.CHINHANH.TENCN = 'van mih';
+SELECT *  FROM SYS.thanhpho;
+
+SELECT SYS.QUAN.MAQUAN , SYS.QUAN.TENQUAN   FROM SYS.QUAN, SYS.THANHPHO WHERE SYS.QUAN.MATP = SYS.THANHPHO.MATP AND SYS.THANHPHO.MATP = 'TP0001';
+
+
+SELECT SYS.CHINHANH.MACN , sys.chinhanh.TENCN , sys.chinhanh.SOFAX, sys.quan.MATP, sys.phuong.MAQUAN, sys.phuong.MAPHUONG, sys.duong.MADUONG, sys.chinhanh.MANVTRUONG
+FROM SYS.CHINHANH, SYS.DUONG, SYS.PHUONG, SYS.QUAN
+WHERE SYS.CHINHANH.MADUONG = SYS.DUONG.MADUONG AND SYS.CHINHANH.MAPHUONG = SYS.PHUONG.MAPHUONG AND SYS.PHUONG.MAQUAN = SYS.QUAN.MAQUAN
+order by macn;
+
+
+SAVEPOINT LOC;
+INSERT INTO sys.CHINHANH VALUES(7,'Van hau','0123456789','D0001','P0001', '', null);
+rollback to loc;
+
+
+
+
+update sys.chinhanh set diachi = (
+SELECT TENDUONG || ', ' ||TENPHUONG || ', ' ||TENQUAN || ', ' || TENTP
+FROM sys.DUONG D, sys.PHUONG P, sys.QUAN Q, sys.THANHPHO TP
+where chinhanh.maduong  =  d.maduong and p.maphuong = chinhanh.maphuong and p.maquan = q.maquan and q.matp = tp.matp);
+
+UPDATE SYS.CHINHANH SET TENCN = 'vn tran', SOFAX = '1234567890' , MADUONG = 'D0002' , MAPHUONG = 'P0002' , MANVTRUONG= 6 WHERE MACN = 6; 
+rollback;
+
+--TEST CHO PHAN THEM DU LIEU VAO TRONG TABLE DIACHI
+SELECT * FROM SYS.CHINHANH;
+DELETE FROM SYS.CHINHANH WHERE MACN = 7;
+COMMIT;
+-------------
+
+SELECT SYS.CHINHANH.MACN , TENCN , SOFAX, SYS.CHINHANH.DIACHI , SYS.NHANVIEN.HOTEN 
+FROM SYS.CHINHANH LEFT OUTER JOIN SYS.NHANVIEN ON SYS.CHINHANH.MANVTRUONG = SYS.NHANVIEN.MANV;
+
+
+--tinh so nhan vien cua chi nhanh
+select count(*) from sys.chinhanh, sys.nhanvien where sys.nhanvien.macn = sys.chinhanh.macn and sys.chinhanh.macn = '7';
+
+----------------------------------------------------------------------------------
+--PHAN LAM CHO VIEC SINH SUA NHAN VIEN
+SELECT MANV, HOTEN, SDT, DIACHI, CHUCVU FROM SYS.NHANVIEN ORDER BY MANV;
+select * from sys.nhanvien;
+
+INSERT INTO SYS.NHANVIEN  
+values (sys.seq_MaNhanVien.nextval,'Nguyen Van A', '11-11-1990', '113496780','nguyenvananh@gmai.com', '0922345678', '2015', 'Truong Chi Nhanh',700000, 'D0001', 'P0001', '', 1 );
+
+UPDATE SYS.NHANVIEN SET DIACHI = ( SELECT TENDUONG || ', ' ||TENPHUONG || ', ' ||TENQUAN || ', ' || TENTP FROM SYS.DUONG D, SYS.PHUONG P, SYS.QUAN Q, SYS.THANHPHO TP WHERE NHANVIEN.MADUONG  =  D.MADUONG AND P.MAPHUONG = NHANVIEN.MAPHUONG AND P.MAQUAN = Q.MAQUAN AND Q.MATP = TP.MATP);
+DELETE SYS.NHANVIEN WHERE MANV = 34;
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MM-YYYY';
+commit;
+
+select * from sys.nhanvien where manv = 1;
+
+
+
+--get data cho viec tao nhanvien
+SELECT nv.*, q.MATP, p.MAQUAN
+FROM SYS.NHANVIEN NV, SYS.DUONG D, SYS.PHUONG P, SYS.QUAN Q 
+WHERE nv.MADUONG = d.MADUONG AND nv.MAPHUONG = p.MAPHUONG AND p.MAQUAN = q.MAQUAN;
+
+--select nhanvien
+SELECT nv.*, q.MATP, p.MAQUAN FROM SYS.NHANVIEN NV, SYS.DUONG D, SYS.PHUONG P, SYS.QUAN Q  WHERE nv.MADUONG = d.MADUONG AND nv.MAPHUONG = p.MAPHUONG AND p.MAQUAN = q.MAQUAN and nv.manv = 35;
+
+--delete nhan vien
+delete from sys.nhanvien where manv = 1;
+COMMIT;
+-- lay danh sach doi tac
+SELECT MADT, TEN FROM SYS.DOITAC WHERE MANV = 1;
+SELECT * FROM SYS.DOITAC WHERE MADT NOT IN (SELECT MADT FROM SYS.DOITAC WHERE MANV = 1) ORDER BY MADT;
+UPDATE SYS.DOITAC SET MANV = 3 WHERE MADT = 1;
+
+--select ds chuc vu
+SELECT DISTINCT CHUCVU   FROM SYS.NHANVIEN;
+--loc nhan vien theo chuc vu va theo chinhanh;
+select * from sys.nhanvien where macn='1' ;
+

@@ -1,0 +1,30 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[--5-----------------------------------------------------------------------------------------------------
+create table NhanVienBH (
+MaNV int primary key, 
+TongDoanhSo int default 0,
+constraint fk_Nhanvienbh_nhanvien_manv foreign key(Manv) references nhanvien(manv) on delete cascade
+);
+--5 end ------------------------------------------------------------------------------------------------
+
+--6-----------------------------------------------------------------------------------------------------
+create table DoanhSoThang (
+MaNV int, 
+Nam char(4) , 
+Thang char(2) , 
+DoanhSo int default 0,
+primary key (Manv,nam, thang),
+constraint fk_doanhsothang_nhanvien_manv foreign key(manv) references nhanvien(manv) on delete cascade,
+constraint format_doanhsothang_thang check( thang > '00' and thang < '13' and regexp_like(thang, '\d\d')),
+constraint format_doandsothang_nam check( nam > '1900' and nam <= '9999' and regexp_like(nam, '\d{4}'))
+);
+--6 end ------------------------------------------------------------------------------------------------]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[17:26 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.062]]></execTime>
+	</historyItem>
+</history>

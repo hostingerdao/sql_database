@@ -1,0 +1,16 @@
+<?xml version='1.0'  encoding='UTF-8' ?>
+<history>
+	<historyItem>
+		<sql><![CDATA[insert into Canhoanh values('CC0001', '101B3','http://www.alphaven.ch/Alphaven%20KITCHEN%20Apartment%20A.jpg');
+insert into Canhoanh values('CC0001', '101B3','http://www.lavernevillage.com/gridmedia/img/slide4.jpg');
+insert into Canhoanh values('CC0002', '103H2','http://www.alphaven.ch/Alphaven%20KITCHEN%20Apartment%20A.jpg');
+insert into Canhoanh values('CC0002', '103H2','http://www.lavernevillage.com/gridmedia/img/slide4.jpg');
+insert into Canhoanh values('CC0003', '301B4','http://timeandplace.com/photos/destination/paris/saint-martin/hero/paris-luxury-rental-apartment.jpg');
+--23 end ------------------------------------------------------------------------------------------------]]></sql>
+		<connection><![CDATA[loc01-ass2]]></connection>
+		<timestamp><![CDATA[19:25 18/04/2016]]></timestamp>
+		<type><![CDATA[Script]]></type>
+		<executed><![CDATA[1]]></executed>
+		<execTime><![CDATA[0.015]]></execTime>
+	</historyItem>
+</history>
